@@ -17,16 +17,6 @@ class Date
     @year  = attrs[:year]
   end
 
-  def self.new_date_from(date, days)
-    raise InvalidDateError, "Please enter with a valid date instance" unless date.is_a?(Date)
-    raise InvalidDateError, "Please enter a integer" unless days.is_a?(Integer)
-
-    date_in_days = convert_to_days(date)
-    new_date_in_days = date_in_days + days
-
-    convert_to_date(new_date_in_days)
-  end
-
   def self.leap_year?(year)
     if (year % 4).positive?
       false
@@ -39,54 +29,31 @@ class Date
     end
   end
 
+  def new_date_from(days)
+    raise InvalidDateError, "Please enter a integer" unless days.is_a?(Integer)
+
+    date_in_days = convert_to_days(self)
+    new_date_in_days = date_in_days + days
+
+    convert_to_date(new_date_in_days)
+  end
+
   def before?(date)
     raise InvalidDateError, "Please enter with a valid date instance" unless date.is_a?(Date)
 
-    (@year <= date.year) && (@month <= date.month) && (@day <= date.day)
+    convert_to_days(self) < convert_to_days(date)
   end
 
   def offset(date)
     raise InvalidDateError, "Please enter with a valid date instance" unless date.is_a?(Date)
 
-    day1 = Date.convert_to_day(self)
-    day2 = Date.convert_to_day(date)
-
-    (day1 - day2).abs
+    (convert_to_days(self) - convert_to_days(date)).abs
   end
 
   def to_str
     day = @day < 10 ? "0#{@day}" : @day
     month = @month < 10 ? "0#{@month}" : @month
     "#{day}/#{month}/#{@year}"
-  end
-
-  private_class_method def self.convert_to_days(date)
-    raise InvalidDateError, "Please enter with a valid date instance" unless date.is_a?(Date)
-
-    month = (date.month + 9) % 12
-    year = (date.year - month / 10)
-    (365 * year) + (year / 4) - (year / 100) + (year / 400) + ((month * 306 + 5) / 10) + (date.day - 1)
-  end
-
-  private_class_method def self.convert_to_date(days_in_number)
-    raise InvalidDateError, "Please enter a integer" unless days_in_number.is_a?(Integer)
-
-    year = (10_000 * days_in_number + 14_780) / 3_652_425
-    d1 = (days_in_number - ((365 * year) + (year / 4) - (year / 100) + (year / 400)))
-
-    if d1.negative?
-      year = year - 1
-      d1 = days_in_number - ((365 * year) + (year / 4) - (year / 100) + (year / 400))
-    end
-
-    m1 = (100 * d1 + 52) / 3060
-    month = ((m1 + 2) % 12) + 1
-
-    year = year + ((m1 + 2) / 12)
-
-    day = d1 - ((m1 * 306 + 5) / 10) + 1
-
-    Date.new(day: day, month: month, year: year)
   end
 
   private
@@ -129,5 +96,34 @@ class Date
     else
       true
     end
+  end
+
+  def convert_to_days(date)
+    raise InvalidDateError, "Please enter with a valid date instance" unless date.is_a?(Date)
+
+    month = (date.month + 9) % 12
+    year = (date.year - month / 10)
+    (365 * year) + (year / 4) - (year / 100) + (year / 400) + ((month * 306 + 5) / 10) + (date.day - 1)
+  end
+
+  def convert_to_date(days_in_number)
+    raise InvalidDateError, "Please enter a integer" unless days_in_number.is_a?(Integer)
+
+    year = (10_000 * days_in_number + 14_780) / 3_652_425
+    d1 = (days_in_number - ((365 * year) + (year / 4) - (year / 100) + (year / 400)))
+
+    if d1.negative?
+      year = year - 1
+      d1 = days_in_number - ((365 * year) + (year / 4) - (year / 100) + (year / 400))
+    end
+
+    m1 = (100 * d1 + 52) / 3060
+    month = ((m1 + 2) % 12) + 1
+
+    year = year + ((m1 + 2) / 12)
+
+    day = d1 - ((m1 * 306 + 5) / 10) + 1
+
+    Date.new(day: day, month: month, year: year)
   end
 end
