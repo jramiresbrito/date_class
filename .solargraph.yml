@@ -1,0 +1,6 @@
+---
+include:
+- "./**/*.rb"
+reporters:
+- rubocop
+max_files: 5000
