@@ -58,6 +58,8 @@ Security/Open:
   Enabled: false
 Bundler/OrderedGems:
   Enabled: false
+Style/ClassVars:
+  Enabled: false
 
 AllCops:
   NewCops: enable

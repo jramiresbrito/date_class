@@ -9,12 +9,21 @@ class Date
 
   attr_reader :day, :month, :year
 
+  @@instance_collector = []
+
   def initialize(attrs = {})
+    attrs = default_date(attrs) if attrs.empty?
+
     raise InvalidDateError unless valid?(attrs[:day], attrs[:month], attrs[:year])
 
     @day   = attrs[:day]
     @month = attrs[:month]
     @year  = attrs[:year]
+    @@instance_collector << self
+  end
+
+  def self.all_dates
+    @@instance_collector
   end
 
   def self.leap_year?(year)
@@ -29,25 +38,56 @@ class Date
     end
   end
 
+  def self.convert_to_days(date)
+    raise InvalidDateError, "Please enter with a valid date instance" unless date.is_a?(Date)
+
+    month = (date.month + 9) % 12
+    year = (date.year - month / 10)
+    (365 * year) + (year / 4) - (year / 100) + (year / 400) + ((month * 306 + 5) / 10) + (date.day - 1)
+  end
+
+  def self.convert_to_date(days_in_number, type = "obj")
+    raise InvalidDateError, "Please enter a integer" unless days_in_number.is_a?(Integer)
+
+    year = (10_000 * days_in_number + 14_780) / 3_652_425
+    d1 = (days_in_number - ((365 * year) + (year / 4) - (year / 100) + (year / 400)))
+
+    if d1.negative?
+      year = year - 1
+      d1 = days_in_number - ((365 * year) + (year / 4) - (year / 100) + (year / 400))
+    end
+
+    m1 = (100 * d1 + 52) / 3060
+    month = ((m1 + 2) % 12) + 1
+
+    year = year + ((m1 + 2) / 12)
+
+    day = d1 - ((m1 * 306 + 5) / 10) + 1
+
+    return "#{day}/#{month}/#{year}" if type == "string"
+
+    Date.new(day: day, month: month, year: year)
+  end
+
   def new_date_from(days)
     raise InvalidDateError, "Please enter a integer" unless days.is_a?(Integer)
 
-    date_in_days = convert_to_days(self)
+    date_in_days = Date.convert_to_days(self)
     new_date_in_days = date_in_days + days
 
-    convert_to_date(new_date_in_days)
+    Date.convert_to_date(new_date_in_days, type: "obj")
   end
 
   def before?(date)
     raise InvalidDateError, "Please enter with a valid date instance" unless date.is_a?(Date)
 
-    convert_to_days(self) < convert_to_days(date)
+    Date.convert_to_days(self) < Date.convert_to_days(date)
   end
 
   def offset(date)
     raise InvalidDateError, "Please enter with a valid date instance" unless date.is_a?(Date)
 
-    (convert_to_days(self) - convert_to_days(date)).abs
+    (Date.convert_to_days(self) - Date.convert_to_days(date)).abs
   end
 
   def to_str
@@ -98,32 +138,19 @@ class Date
     end
   end
 
-  def convert_to_days(date)
-    raise InvalidDateError, "Please enter with a valid date instance" unless date.is_a?(Date)
-
-    month = (date.month + 9) % 12
-    year = (date.year - month / 10)
-    (365 * year) + (year / 4) - (year / 100) + (year / 400) + ((month * 306 + 5) / 10) + (date.day - 1)
-  end
-
-  def convert_to_date(days_in_number)
-    raise InvalidDateError, "Please enter a integer" unless days_in_number.is_a?(Integer)
-
-    year = (10_000 * days_in_number + 14_780) / 3_652_425
-    d1 = (days_in_number - ((365 * year) + (year / 4) - (year / 100) + (year / 400)))
-
-    if d1.negative?
-      year = year - 1
-      d1 = days_in_number - ((365 * year) + (year / 4) - (year / 100) + (year / 400))
+  def default_date(attrs)
+    if @@instance_collector.empty?
+      raise InvalidDateError, "Please enter a hash with the format: day: d/dd, month: m/mm, year: yyyy"
     end
 
-    m1 = (100 * d1 + 52) / 3060
-    month = ((m1 + 2) % 12) + 1
+    last_date = @@instance_collector.last
+    aux = Date.convert_to_days(last_date) + 1
 
-    year = year + ((m1 + 2) / 12)
+    aux = Date.convert_to_date(aux, "string")
+    attrs[:day]   = aux.split('/')[0].to_i
+    attrs[:month] = aux.split('/')[1].to_i
+    attrs[:year]  = aux.split('/')[2].to_i
 
-    day = d1 - ((m1 * 306 + 5) / 10) + 1
-
-    Date.new(day: day, month: month, year: year)
+    attrs
   end
 end
