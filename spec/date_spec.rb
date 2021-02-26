@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start
+
 # Ensure that the proper Date class is loaded
 begin
   require_relative "../date/date"
