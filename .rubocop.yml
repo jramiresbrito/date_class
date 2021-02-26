@@ -60,7 +60,9 @@ Bundler/OrderedGems:
   Enabled: false
 Style/ClassVars:
   Enabled: false
-
+Metrics/PerceivedComplexity:
+  Enabled: false
+  
 AllCops:
   NewCops: enable
   TargetRubyVersion: 2.6

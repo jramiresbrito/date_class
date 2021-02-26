@@ -1,6 +1,6 @@
 class Date
   class InvalidDateError < StandardError
-    def initialize(msg = "Invalid Date")
+    def initialize(msg = "Invalid Date.")
       super(msg)
     end
   end
@@ -46,7 +46,7 @@ class Date
     (365 * year) + (year / 4) - (year / 100) + (year / 400) + ((month * 306 + 5) / 10) + (date.day - 1)
   end
 
-  def self.convert_to_date(days_in_number, type = "obj")
+  def self.convert_to_date(days_in_number, type = "object")
     raise InvalidDateError, "Please enter a integer" unless days_in_number.is_a?(Integer)
 
     year = (10_000 * days_in_number + 14_780) / 3_652_425
@@ -69,25 +69,25 @@ class Date
     Date.new(day: day, month: month, year: year)
   end
 
+  def self.offset(date1, date2)
+    raise InvalidDateError, "Please enter with valid date instances" unless date1.is_a?(Date) && date2.is_a?(Date)
+
+    (Date.convert_to_days(date1) - Date.convert_to_days(date2)).abs
+  end
+
   def new_date_from(days)
     raise InvalidDateError, "Please enter a integer" unless days.is_a?(Integer)
 
     date_in_days = Date.convert_to_days(self)
     new_date_in_days = date_in_days + days
 
-    Date.convert_to_date(new_date_in_days, type: "obj")
+    Date.convert_to_date(new_date_in_days)
   end
 
   def before?(date)
     raise InvalidDateError, "Please enter with a valid date instance" unless date.is_a?(Date)
 
     Date.convert_to_days(self) < Date.convert_to_days(date)
-  end
-
-  def offset(date)
-    raise InvalidDateError, "Please enter with a valid date instance" unless date.is_a?(Date)
-
-    (Date.convert_to_days(self) - Date.convert_to_days(date)).abs
   end
 
   def to_str
@@ -103,7 +103,7 @@ class Date
       raise InvalidDateError, "Please enter a hash with the format: day: d/dd, month: m/mm, year: yyyy"
     end
     raise InvalidDateError, "Day must be between 1 and 31." if day < 1 || day > 31
-    raise InvalidDateError, "Month must be between 1 and 12" if month < 1 || month > 12
+    raise InvalidDateError, "Month must be between 1 and 12." if month < 1 || month > 12
     raise InvalidDateError, "Year must be at least 1900." if year < 1900
 
     case month
