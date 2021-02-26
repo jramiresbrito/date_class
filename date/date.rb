@@ -29,10 +29,10 @@ class Date
   def self.leap_year?(year)
     if (year % 4).positive?
       false
-    elsif (year % 100).zero?
-      false
     elsif (year % 400).zero?
       true
+    elsif (year % 100).zero?
+      false
     else
       true
     end

@@ -124,14 +124,14 @@ describe "Date", :date do
 
     context "leap_years" do
       it "returns true for leap years" do
-        leap_years = [2020, 2024, 2028]
+        leap_years = [2020, 2024, 2400]
         leap_years.each do |year|
           expect(Date.leap_year?(year)).to eq true
         end
       end
 
       it "returns false for non-leap years" do
-        leap_years = [2021, 2100, 2400]
+        leap_years = [2021, 2100, 2200]
         leap_years.each do |year|
           expect(Date.leap_year?(year)).to eq false
         end
