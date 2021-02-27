@@ -1,3 +1,4 @@
+require 'pry-byebug'
 require 'simplecov'
 SimpleCov.start
 
@@ -18,29 +19,56 @@ end
 
 # rubocop:disable Metrics/BlockLength
 describe "Date", :date do
-  let(:attrs) { { day: 28, month: 2, year: 2021 } }
-  let!(:date) { Date.new(attrs) }
-  let!(:default_date) { Date.new }
-
   context "without attributes" do
-    it "returns a date instance based on the last created date instance" do
-      expect(default_date).to be_a(Date)
-      expect(default_date.day).to eq 1
-      expect(default_date.month).to eq 3
-      expect(default_date.year).to eq 2021
+    context "without previous class instance" do
+      it "returns an error if there isn't any previous instance" do
+        expect { Date.new }.to(raise_error) do |error|
+          expect(error).to be_a(Date.const_get(:InvalidDateError))
+            .and having_attributes({ message: "Please enter a hash with the format: day: d/dd, month: m/mm, year: yyyy" })
+        end
+      end
+    end
+
+    context "after having an instance" do
+      let(:attrs) { { day: 28, month: 2, year: 2021 } }
+      let!(:date) { Date.new(attrs) }
+      let!(:default_date) { Date.new }
+
+      it "returns a date instance based on the last created date instance" do
+        expect(default_date).to be_a(Date)
+        expect(default_date.day).to eq 1
+        expect(default_date.month).to eq 3
+        expect(default_date.year).to eq 2021
+      end
     end
   end
 
   context "with valid attributes" do
+    let(:attrs) { { day: 28, month: 2, year: 2021 } }
+    let!(:date) { Date.new(attrs) }
+
     it "returns a date instance" do
       expect(date).to be_a(Date)
       expect(date.day).to eq 28
       expect(date.month).to eq 2
       expect(date.year).to eq 2021
+      expect(Date.new(day: 31, month: 1, year: 2021)).to be_a(Date)
+      expect(Date.new(day: 31, month: 5, year: 2021)).to be_a(Date)
+      expect(Date.new(day: 30, month: 6, year: 2021)).to be_a(Date)
+      expect(Date.new(day: 31, month: 7, year: 2021)).to be_a(Date)
+      expect(Date.new(day: 31, month: 8, year: 2021)).to be_a(Date)
+      expect(Date.new(day: 30, month: 9, year: 2021)).to be_a(Date)
+      expect(Date.new(day: 31, month: 10, year: 2021)).to be_a(Date)
+      expect(Date.new(day: 30, month: 11, year: 2021)).to be_a(Date)
+      expect(Date.new(day: 31, month: 12, year: 2021)).to be_a(Date)
     end
   end
 
   context "with invalid attributes" do
+    let(:attrs) { { day: 28, month: 2, year: 2021 } }
+    let!(:date) { Date.new(attrs) }
+    let!(:default_date) { Date.new }
+
     context "invalid days" do
       it "raises InvalidDateError for invalid days" do
         expect { Date.new(day: "25", month: "1", year: "2021") }.to(raise_error) do |error|
@@ -106,6 +134,10 @@ describe "Date", :date do
   end
 
   context "class methods" do
+    let(:attrs) { { day: 28, month: 2, year: 2021 } }
+    let!(:date) { Date.new(attrs) }
+    let!(:default_date) { Date.new }
+
     context "all_dates" do
       it "returns an array containing all instances" do
         expect(Date.all_dates).to be_a(Array)
@@ -192,6 +224,10 @@ describe "Date", :date do
   end
 
   context "istance methods" do
+    let(:attrs) { { day: 28, month: 2, year: 2021 } }
+    let!(:date) { Date.new(attrs) }
+    let!(:default_date) { Date.new }
+
     context "to_str" do
       it "returns a string" do
         expect(date.to_str).to eq "28/02/2021"
