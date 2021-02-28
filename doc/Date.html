@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Date
+  
+    &mdash; Documentation by YARD 0.9.26
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Date";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (D)</a> &raquo;
+    
+    
+    <span class="title">Date</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Date
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Date</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>date/date.rb</dd>
+  </dl>
+  
+</div>
+
+
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="instance_collector-classvariable" class="">@@instance_collector =
+          
+        </dt>
+        <dd><pre class="code"><span class='lbracket'>[</span><span class='rbracket'>]</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#day-instance_method" title="#day (instance method)">#<strong>day</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute day.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#month-instance_method" title="#month (instance method)">#<strong>month</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute month.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#year-instance_method" title="#year (instance method)">#<strong>year</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute year.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#all_dates-class_method" title="all_dates (class method)">.<strong>all_dates</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#convert_to_date-class_method" title="convert_to_date (class method)">.<strong>convert_to_date</strong>(days_in_number, type = &quot;object&quot;)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#convert_to_days-class_method" title="convert_to_days (class method)">.<strong>convert_to_days</strong>(date)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#leap_year%3F-class_method" title="leap_year? (class method)">.<strong>leap_year?</strong>(year)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#offset-class_method" title="offset (class method)">.<strong>offset</strong>(date1, date2)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#before%3F-instance_method" title="#before? (instance method)">#<strong>before?</strong>(date)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(attrs = {})  &#x21d2; Date </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A new instance of Date.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new_date_from-instance_method" title="#new_date_from (instance method)">#<strong>new_date_from</strong>(days)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_str-instance_method" title="#to_str (instance method)">#<strong>to_str</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(attrs = {})  &#x21d2; <tt><span class='object_link'><a href="" title="Date (class)">Date</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new instance of Date.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'>InvalidDateError</span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'date/date.rb', line 14</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_attrs'>attrs</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_attrs'>attrs</span> <span class='op'>=</span> <span class='id identifier rubyid_default_date'>default_date</span><span class='lparen'>(</span><span class='id identifier rubyid_attrs'>attrs</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>InvalidDateError</span> <span class='kw'>unless</span> <span class='id identifier rubyid_valid?'>valid?</span><span class='lparen'>(</span><span class='id identifier rubyid_attrs'>attrs</span><span class='lbracket'>[</span><span class='symbol'>:day</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='lbracket'>[</span><span class='symbol'>:month</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='lbracket'>[</span><span class='symbol'>:year</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+  <span class='ivar'>@day</span>   <span class='op'>=</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='lbracket'>[</span><span class='symbol'>:day</span><span class='rbracket'>]</span>
+  <span class='ivar'>@month</span> <span class='op'>=</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='lbracket'>[</span><span class='symbol'>:month</span><span class='rbracket'>]</span>
+  <span class='ivar'>@year</span>  <span class='op'>=</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='lbracket'>[</span><span class='symbol'>:year</span><span class='rbracket'>]</span>
+  <span class='cvar'>@@instance_collector</span> <span class='op'>&lt;&lt;</span> <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="day-instance_method">
+  
+    #<strong>day</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute day.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10
+11
+12</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'date/date.rb', line 10</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_day'>day</span>
+  <span class='ivar'>@day</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="month-instance_method">
+  
+    #<strong>month</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute month.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10
+11
+12</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'date/date.rb', line 10</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_month'>month</span>
+  <span class='ivar'>@month</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="year-instance_method">
+  
+    #<strong>year</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute year.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10
+11
+12</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'date/date.rb', line 10</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_year'>year</span>
+  <span class='ivar'>@year</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="all_dates-class_method">
+  
+    .<strong>all_dates</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'date/date.rb', line 25</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_all_dates'>all_dates</span>
+  <span class='cvar'>@@instance_collector</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="convert_to_date-class_method">
+  
+    .<strong>convert_to_date</strong>(days_in_number, type = &quot;object&quot;)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'>InvalidDateError</span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'date/date.rb', line 49</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_convert_to_date'>convert_to_date</span><span class='lparen'>(</span><span class='id identifier rubyid_days_in_number'>days_in_number</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>object</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>InvalidDateError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Please enter a integer</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_days_in_number'>days_in_number</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Integer</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_year'>year</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='int'>10_000</span> <span class='op'>*</span> <span class='id identifier rubyid_days_in_number'>days_in_number</span> <span class='op'>+</span> <span class='int'>14_780</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='int'>3_652_425</span>
+  <span class='id identifier rubyid_d1'>d1</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_days_in_number'>days_in_number</span> <span class='op'>-</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='int'>365</span> <span class='op'>*</span> <span class='id identifier rubyid_year'>year</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span> <span class='op'>/</span> <span class='int'>4</span><span class='rparen'>)</span> <span class='op'>-</span> <span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span> <span class='op'>/</span> <span class='int'>100</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span> <span class='op'>/</span> <span class='int'>400</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_d1'>d1</span><span class='period'>.</span><span class='id identifier rubyid_negative?'>negative?</span>
+    <span class='id identifier rubyid_year'>year</span> <span class='op'>=</span> <span class='id identifier rubyid_year'>year</span> <span class='op'>-</span> <span class='int'>1</span>
+    <span class='id identifier rubyid_d1'>d1</span> <span class='op'>=</span> <span class='id identifier rubyid_days_in_number'>days_in_number</span> <span class='op'>-</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='int'>365</span> <span class='op'>*</span> <span class='id identifier rubyid_year'>year</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span> <span class='op'>/</span> <span class='int'>4</span><span class='rparen'>)</span> <span class='op'>-</span> <span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span> <span class='op'>/</span> <span class='int'>100</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span> <span class='op'>/</span> <span class='int'>400</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_m1'>m1</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='int'>100</span> <span class='op'>*</span> <span class='id identifier rubyid_d1'>d1</span> <span class='op'>+</span> <span class='int'>52</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='int'>3060</span>
+  <span class='id identifier rubyid_month'>month</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_m1'>m1</span> <span class='op'>+</span> <span class='int'>2</span><span class='rparen'>)</span> <span class='op'>%</span> <span class='int'>12</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='int'>1</span>
+
+  <span class='id identifier rubyid_year'>year</span> <span class='op'>=</span> <span class='id identifier rubyid_year'>year</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_m1'>m1</span> <span class='op'>+</span> <span class='int'>2</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='int'>12</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_day'>day</span> <span class='op'>=</span> <span class='id identifier rubyid_d1'>d1</span> <span class='op'>-</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_m1'>m1</span> <span class='op'>*</span> <span class='int'>306</span> <span class='op'>+</span> <span class='int'>5</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='int'>10</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='int'>1</span>
+
+  <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_day'>day</span><span class='embexpr_end'>}</span><span class='tstring_content'>/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_month'>month</span><span class='embexpr_end'>}</span><span class='tstring_content'>/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_year'>year</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_type'>type</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>string</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='const'><span class='object_link'><a href="" title="Date (class)">Date</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Date#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>day:</span> <span class='id identifier rubyid_day'>day</span><span class='comma'>,</span> <span class='label'>month:</span> <span class='id identifier rubyid_month'>month</span><span class='comma'>,</span> <span class='label'>year:</span> <span class='id identifier rubyid_year'>year</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="convert_to_days-class_method">
+  
+    .<strong>convert_to_days</strong>(date)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'>InvalidDateError</span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+41
+42
+43
+44
+45
+46
+47</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'date/date.rb', line 41</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_convert_to_days'>convert_to_days</span><span class='lparen'>(</span><span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>InvalidDateError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Please enter with a valid date instance</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="" title="Date (class)">Date</a></span></span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_month'>month</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_month'>month</span> <span class='op'>+</span> <span class='int'>9</span><span class='rparen'>)</span> <span class='op'>%</span> <span class='int'>12</span>
+  <span class='id identifier rubyid_year'>year</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_year'>year</span> <span class='op'>-</span> <span class='id identifier rubyid_month'>month</span> <span class='op'>/</span> <span class='int'>10</span><span class='rparen'>)</span>
+  <span class='lparen'>(</span><span class='int'>365</span> <span class='op'>*</span> <span class='id identifier rubyid_year'>year</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span> <span class='op'>/</span> <span class='int'>4</span><span class='rparen'>)</span> <span class='op'>-</span> <span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span> <span class='op'>/</span> <span class='int'>100</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span> <span class='op'>/</span> <span class='int'>400</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_month'>month</span> <span class='op'>*</span> <span class='int'>306</span> <span class='op'>+</span> <span class='int'>5</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='int'>10</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span> <span class='op'>-</span> <span class='int'>1</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="leap_year?-class_method">
+  
+    .<strong>leap_year?</strong>(year)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'date/date.rb', line 29</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_leap_year?'>leap_year?</span><span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span> <span class='op'>%</span> <span class='int'>4</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_positive?'>positive?</span>
+    <span class='kw'>false</span>
+  <span class='kw'>elsif</span> <span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span> <span class='op'>%</span> <span class='int'>400</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_zero?'>zero?</span>
+    <span class='kw'>true</span>
+  <span class='kw'>elsif</span> <span class='lparen'>(</span><span class='id identifier rubyid_year'>year</span> <span class='op'>%</span> <span class='int'>100</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_zero?'>zero?</span>
+    <span class='kw'>false</span>
+  <span class='kw'>else</span>
+    <span class='kw'>true</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="offset-class_method">
+  
+    .<strong>offset</strong>(date1, date2)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'>InvalidDateError</span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+72
+73
+74
+75
+76</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'date/date.rb', line 72</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_offset'>offset</span><span class='lparen'>(</span><span class='id identifier rubyid_date1'>date1</span><span class='comma'>,</span> <span class='id identifier rubyid_date2'>date2</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>InvalidDateError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Please enter with valid date instances</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_date1'>date1</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="" title="Date (class)">Date</a></span></span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_date2'>date2</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="" title="Date (class)">Date</a></span></span><span class='rparen'>)</span>
+
+  <span class='lparen'>(</span><span class='const'><span class='object_link'><a href="" title="Date (class)">Date</a></span></span><span class='period'>.</span><span class='id identifier rubyid_convert_to_days'><span class='object_link'><a href="#convert_to_days-class_method" title="Date.convert_to_days (method)">convert_to_days</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_date1'>date1</span><span class='rparen'>)</span> <span class='op'>-</span> <span class='const'><span class='object_link'><a href="" title="Date (class)">Date</a></span></span><span class='period'>.</span><span class='id identifier rubyid_convert_to_days'><span class='object_link'><a href="#convert_to_days-class_method" title="Date.convert_to_days (method)">convert_to_days</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_date2'>date2</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_abs'>abs</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="before?-instance_method">
+  
+    #<strong>before?</strong>(date)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'>InvalidDateError</span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+87
+88
+89
+90
+91</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'date/date.rb', line 87</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_before?'>before?</span><span class='lparen'>(</span><span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>InvalidDateError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Please enter with a valid date instance</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="" title="Date (class)">Date</a></span></span><span class='rparen'>)</span>
+
+  <span class='const'><span class='object_link'><a href="" title="Date (class)">Date</a></span></span><span class='period'>.</span><span class='id identifier rubyid_convert_to_days'><span class='object_link'><a href="#convert_to_days-class_method" title="Date.convert_to_days (method)">convert_to_days</a></span></span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="" title="Date (class)">Date</a></span></span><span class='period'>.</span><span class='id identifier rubyid_convert_to_days'><span class='object_link'><a href="#convert_to_days-class_method" title="Date.convert_to_days (method)">convert_to_days</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="new_date_from-instance_method">
+  
+    #<strong>new_date_from</strong>(days)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'>InvalidDateError</span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+78
+79
+80
+81
+82
+83
+84
+85</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'date/date.rb', line 78</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_new_date_from'>new_date_from</span><span class='lparen'>(</span><span class='id identifier rubyid_days'>days</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>InvalidDateError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Please enter a integer</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_days'>days</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Integer</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_date_in_days'>date_in_days</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Date (class)">Date</a></span></span><span class='period'>.</span><span class='id identifier rubyid_convert_to_days'><span class='object_link'><a href="#convert_to_days-class_method" title="Date.convert_to_days (method)">convert_to_days</a></span></span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_new_date_in_days'>new_date_in_days</span> <span class='op'>=</span> <span class='id identifier rubyid_date_in_days'>date_in_days</span> <span class='op'>+</span> <span class='id identifier rubyid_days'>days</span>
+
+  <span class='const'><span class='object_link'><a href="" title="Date (class)">Date</a></span></span><span class='period'>.</span><span class='id identifier rubyid_convert_to_date'><span class='object_link'><a href="#convert_to_date-class_method" title="Date.convert_to_date (method)">convert_to_date</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_new_date_in_days'>new_date_in_days</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_str-instance_method">
+  
+    #<strong>to_str</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+93
+94
+95
+96
+97</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'date/date.rb', line 93</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_str'>to_str</span>
+  <span class='id identifier rubyid_day'>day</span> <span class='op'>=</span> <span class='ivar'>@day</span> <span class='op'>&lt;</span> <span class='int'>10</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0</span><span class='embexpr_beg'>#{</span><span class='ivar'>@day</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='ivar'>@day</span>
+  <span class='id identifier rubyid_month'>month</span> <span class='op'>=</span> <span class='ivar'>@month</span> <span class='op'>&lt;</span> <span class='int'>10</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0</span><span class='embexpr_beg'>#{</span><span class='ivar'>@month</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='ivar'>@month</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_day'>day</span><span class='embexpr_end'>}</span><span class='tstring_content'>/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_month'>month</span><span class='embexpr_end'>}</span><span class='tstring_content'>/</span><span class='embexpr_beg'>#{</span><span class='ivar'>@year</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Sun Feb 28 15:16:57 2021 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.26 (ruby-2.6.6).
+</div>
+
+    </div>
+  </body>
+</html>
