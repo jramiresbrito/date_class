@@ -47,7 +47,7 @@ class Date
   end
 
   def self.convert_to_date(days_in_number, type = "object")
-    raise InvalidDateError, "Please enter a integer" unless days_in_number.is_a?(Integer)
+    raise InvalidDateError, "Please enter an integer" unless days_in_number.is_a?(Integer)
 
     year = (10_000 * days_in_number + 14_780) / 3_652_425
     d1 = (days_in_number - ((365 * year) + (year / 4) - (year / 100) + (year / 400)))
@@ -76,7 +76,7 @@ class Date
   end
 
   def new_date_from(days)
-    raise InvalidDateError, "Please enter a integer" unless days.is_a?(Integer)
+    raise InvalidDateError, "Please enter an integer" unless days.is_a?(Integer)
 
     date_in_days = Date.convert_to_days(self)
     new_date_in_days = date_in_days + days
